@@ -1,14 +1,19 @@
-import {ThirdwebProvider} from "thirdweb/react";
+// import { ThirdwebProvider } from '@thirdweb-dev/react'
+import { RouterApp } from './pages/router'
+import { NextUIProvider } from '@nextui-org/system'
+import { BrowserRouter } from 'react-router-dom'
+import { ThirdwebProvider } from '@thirdweb-dev/react'
 
 const App = () => {
-
   return (
+    <BrowserRouter>
       <ThirdwebProvider>
-    <div className="w-full max-w-xl my-0 mx-auto p-2 text-center">
-        sdf
-    </div>
+        <NextUIProvider>
+          <RouterApp />
+        </NextUIProvider>
       </ThirdwebProvider>
+    </BrowserRouter>
   )
 }
 
-export default App;
+export default App
