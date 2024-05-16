@@ -1,13 +1,26 @@
-import { Text, ConnectButton } from '@components'
+import Lottie, { Options } from 'react-lottie'
+import { ConnectButton } from '@components'
+import { Text } from '@uikit'
+
+import AtomLottie from './atom.lottie.json'
+
+const defaultOptions: Options = {
+  loop: true,
+  autoplay: true,
+  animationData: AtomLottie,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice',
+  },
+}
 
 export const AuthController = () => {
   return (
     <div className="h-full">
       <div className="flex flex-col gap-32 justify-center items-center h-full">
-        <div className="flex gap-20">
-          <div className="flex flex-col text-center justify-center gap-5 w-3/6">
+        <div className="flex md:flex-row flex-col-reverse md:gap-20 gap-8">
+          <div className="flex flex-col text-center justify-center gap-5 md:w-3/6">
             <div>
-              <Text gradient="silver" className="text-5xl font-bold">
+              <Text color="silver" className="text-5xl font-bold">
                 Dear user
               </Text>
             </div>
@@ -23,10 +36,12 @@ export const AuthController = () => {
             </Text>
           </div>
 
-          <img
-            src="https://www.figma.com/041fe635-8734-4600-95ca-4b999a28b504"
-            className="w-3/6"
-          />
+          <div className="md:w-3/6 mx-36 md:mx-0">
+            <Lottie
+              options={defaultOptions}
+            />
+          </div>
+
         </div>
         <div>
           <ConnectButton btnTitle="Login to service" />

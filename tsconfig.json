@@ -21,6 +21,7 @@
     "outDir": "./build",
     "paths": {
       "@components": ["./src/@shared/components/_index"],
+      "@utils": ["./src/@shared/utils/_index"],
       "@uikit": ["./src/@uikit/_index"]
     }
   },

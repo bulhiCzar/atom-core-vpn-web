@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useRoutes } from 'react-router-dom'
-import { AuthController } from './auth'
+import { AuthController } from './Auth'
 import { AppLayout } from '@components'
 import { useWallet } from '@thirdweb-dev/react'
+import { DashboardController } from './Dashboard'
+import { ReferralController } from './Referral'
 
 const routerBase = [
   {
@@ -15,11 +17,11 @@ const routerApp = [
   ...routerBase,
   {
     path: '/',
-    element: <AppLayout>main</AppLayout>,
+    element: <AppLayout><DashboardController /></AppLayout>,
   },
   {
-    path: 'program',
-    element: <AppLayout>referal progream</AppLayout>,
+    path: 'referral',
+    element: <AppLayout><ReferralController /></AppLayout>,
   },
 ]
 

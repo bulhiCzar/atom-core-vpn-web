@@ -1,18 +1,21 @@
 import React from 'react'
 
 interface Props extends React.HTMLAttributes<HTMLSpanElement> {
-  gradient?: 'silver' | 'blue'
+  color?: 'silver' | 'purple' | 'white'
 }
 
 export const Text: React.FC<React.PropsWithChildren<Props>> = ({
   children,
-  gradient,
+  color,
   className = '',
   ...props
 }) => {
-  if (gradient) {
-    className += ` g-${gradient} bg-clip-text text-transparent inline-block`
+  if (color) {
+    if (color === 'silver') { className += ' g-silver bg-clip-text text-transparent inline-block' }
+    if (color === 'white') { className += ' text-white' }
+    if (color === 'purple') { className += ' text-purple' }
   }
+
   return (
     <span
       className={className}

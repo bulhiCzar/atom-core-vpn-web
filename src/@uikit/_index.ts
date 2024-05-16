@@ -1,1 +1,6 @@
 export * from './Button'
+export * from './Text'
+export * from './Page'
+export * from './List'
+export * from './CopyTo'
+export * from './Input'
