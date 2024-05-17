@@ -152,7 +152,7 @@ export const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
             <div
               className="bg-[url('/atom_bg.png')] bg-no-repeat bg-[center_top_-1rem] absolute inset-0 top-[-6rem]"
             />
-            <div className={`${open && 'opacity-0'} h-full container md:mx-auto z-[1] md:mt-10 mt-0`}>
+            <div className={`${open && 'opacity-0'} h-full container md:mx-auto z-[1] md:pt-10 pt-0`}>
               {children}
             </div>
           </main>

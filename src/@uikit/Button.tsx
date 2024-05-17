@@ -11,7 +11,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
 }, ref) => {
   const classNameBase = ' text-white px-8 py-2 rounded-xl'
   if (props.color === 'primary' && props.variant !== 'bordered') {
-    className += `${classNameBase}  g-blue`
+    className += `${classNameBase}  g-blue hover:opacity-85`
   }
   if (props.color === 'error' && props.variant === 'text') {
     className += `${classNameBase}  !text-red-600 hover:bg-red-700/25`

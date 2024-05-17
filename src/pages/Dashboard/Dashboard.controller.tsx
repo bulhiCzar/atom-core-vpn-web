@@ -1,6 +1,5 @@
-import { Button, List, Page } from '@uikit'
+import { Button, List, Page, CopyTo } from '@uikit'
 import dayjs from 'dayjs'
-import { CopyTo } from '../../@uikit/CopyTo'
 
 const className = 'flex gap-10 md:items-center w-full md:w-auto justify-between'
 
