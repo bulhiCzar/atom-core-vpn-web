@@ -15,9 +15,9 @@ const defaultOptions: Options = {
 
 export const AuthController = () => {
   return (
-    <div className="h-full">
-      <div className="flex flex-col gap-32 justify-center items-center h-full">
-        <div className="flex md:flex-row flex-col-reverse md:gap-20 gap-8">
+    <div className="h-full md:max-w-4xl mx-auto">
+      <div className="flex flex-col gap-16 justify-center items-center h-full">
+        <div className="flex md:flex-row flex-col-reverse md1:gap-20 gap-8">
           <div className="flex flex-col text-center justify-center gap-5 md:w-3/6">
             <div>
               <Text color="silver" className="text-5xl font-bold">
@@ -36,15 +36,16 @@ export const AuthController = () => {
             </Text>
           </div>
 
-          <div className="md:w-3/6 mx-36 md:mx-0">
+          <div className="md:w-2/6 md:mx-0  w-3/6 mx-auto">
             <Lottie
+              isClickToPauseDisabled
               options={defaultOptions}
             />
           </div>
 
         </div>
-        <div>
-          <ConnectButton btnTitle="Login to service" />
+        <div className="md:w-1/4 w-full mx-auto">
+          <ConnectButton btnTitle="Login to service" style={{ width: '100%' }} />
         </div>
       </div>
     </div>

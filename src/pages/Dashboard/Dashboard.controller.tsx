@@ -9,7 +9,7 @@ export const DashboardController = () => {
     <>
       <Page
         title="Overview"
-        className="md:mb-24 mb-6"
+        className="md:mb-24 mb-16"
       >
         <List
           titleVariant="big"
@@ -53,6 +53,7 @@ export const DashboardController = () => {
         className="mb-32"
       >
         <List
+          className="-mt-16"
           titleVariant="small"
           data={[
             {

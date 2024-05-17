@@ -6,18 +6,20 @@ interface Props {
     value: React.ReactNode,
   }[]
   titleVariant?: 'big' | 'small',
+  className?: string,
 }
 
 export const List: React.FC<Props> = ({
   titleVariant,
   data = [],
+  className = '',
 }) => {
   const classNameTitle = titleVariant === 'big'
     ? 'font-semibold text-xl'
     : 'font-normal text-xl'
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className={`${className} flex flex-col gap-4`}>
       {data.map(({ title, value }) => {
         return (
           // eslint-disable-next-line react-hooks/rules-of-hooks

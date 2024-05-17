@@ -18,7 +18,7 @@ export const Page: React.FC<React.PropsWithChildren<Props>> = ({
         <span className="text-4xl font-semibold">
           {title}
         </span>
-        <span className="text-base font-normal opacity-50 md:mb-24 mb-6">
+        <span className="text-base font-normal opacity-50 md:mb-24 mb-12">
           {description}
         </span>
       </div>

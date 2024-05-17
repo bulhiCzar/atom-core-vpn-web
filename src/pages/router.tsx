@@ -5,11 +5,12 @@ import { AppLayout } from '@components'
 import { useWallet } from '@thirdweb-dev/react'
 import { DashboardController } from './Dashboard'
 import { ReferralController } from './Referral'
+import { DownloadController } from './Download'
 
 const routerBase = [
   {
     path: 'download',
-    element: <AppLayout>download page</AppLayout>,
+    element: <AppLayout><DownloadController /></AppLayout>,
   },
 ]
 
