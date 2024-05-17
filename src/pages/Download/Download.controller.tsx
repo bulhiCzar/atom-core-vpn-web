@@ -1,5 +1,6 @@
 import { Button, Card, Page } from '@uikit'
-import { Windows } from './icons'
+import { Download, Windows } from './icons'
+import { ButtonDropDown } from '../../@uikit/ButtonDropDown'
 
 const list = [
   {
@@ -8,7 +9,7 @@ const list = [
     links: [
       { name: 'win 10', link: 'https://goole.com' },
       { name: 'win 7', link: 'https://goole.com' },
-      { name: 'win 8', link: 'https://goole.com' },
+      { name: 'win 8', link: 'https://wds.wargaming.net/wgc/releases_tTrHgLCKHBRiaL/wgc_24.01.00.5433_eu/world_of_tanks_install_eu.exe' },
     ],
   },
   {
@@ -33,17 +34,29 @@ export const DownloadController = () => {
           <Icon />
           <span>{name}</span>
           {!Array.isArray(links)
-            ? <a href={links as string} className="w-full">
+            ? <a href={links as string} className="w-full" download>
               <Button color="primary" className="w-full">
                 Download
               </Button>
             </a>
-            : <Button
-                color="primary"
-                className="w-full"
-            >
-              Download
-            </Button>
+            :
+            <ButtonDropDown
+              title="Download"
+              data={links.map(({ name, link }) => ({
+                name,
+                label: <a
+                  key={name}
+                  href={link}
+                  download="w3logo"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex justify-between items-center group"
+                >
+                  {name}
+                  <Download className="group-hover:opacity-100 opacity-0" />
+                </a>,
+              }))}
+            />
           }
         </Card>,
       )}
