@@ -67,9 +67,12 @@ export const AppLayout: React.FC<React.PropsWithChildren<Props>> = ({
 
   return (
     <div className="flex min-h-screen w-full flex-col p-2 ">
-      <div className="flex flex-col gap-4 relative">
+      <div className="flex flex-col gap-4 relative b-gray">
         <header
           className="rounded-lg border-neutral-700 border py-4 md:px-16 px-4 bg-black sticky top-2 z-30 flex h-20 items-center gap-4"
+          style={{
+            boxShadow: '0px -54px 40px -2px rgba(0,0,0,1)',
+          }}
         >
           <div className="flex items-center flex-1">
             <img
@@ -84,61 +87,63 @@ export const AppLayout: React.FC<React.PropsWithChildren<Props>> = ({
           <ConnectButton />
 
           {isNavbar &&
-            <>
-              <div
-                className="md:hidden cursor-pointer"
-                onClick={() => setOpen(!open)}
+          <>
+            <div
+              className="md:hidden cursor-pointer"
+              onClick={() => setOpen(!open)}
+            >
+              <svg
+                width="32px"
+                height="32px"
+                viewBox="0 0 24.00 24.00"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                stroke=""
               >
-                <svg
-                  width="32px"
-                  height="32px"
-                  viewBox="0 0 24.00 24.00"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  stroke=""
-                >
-                  <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-                  <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
-                  <g id="SVGRepo_iconCarrier">
-                    <path
-                      d="M4 18L20 18"
-                      stroke="#656565"
-                      strokeWidth="1.9200000000000004"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M4 12L20 12"
-                      stroke="#656565"
-                      strokeWidth="1.9200000000000004"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M4 6L20 6"
-                      stroke="#656565"
-                      strokeWidth="1.9200000000000004"
-                      strokeLinecap="round"
-                    />
-                  </g>
-                </svg>
+                <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+                <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
+                <g id="SVGRepo_iconCarrier">
+                  <path
+                    d="M4 18L20 18"
+                    stroke="#656565"
+                    strokeWidth="1.9200000000000004"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M4 12L20 12"
+                    stroke="#656565"
+                    strokeWidth="1.9200000000000004"
+                    strokeLinecap="round"
+                  />
+                  <path
+                    d="M4 6L20 6"
+                    stroke="#656565"
+                    strokeWidth="1.9200000000000004"
+                    strokeLinecap="round"
+                  />
+                </g>
+              </svg>
+            </div>
+
+            <aside
+              className={`${!open && 'hidden'} md:hidden absolute inset-0 top-[calc(5rem+1rem)] z-30 flex flex-col gap-4 h-[calc(100dvh-7rem)]`}
+            >
+              <div className="p-4 rounded-lg border-neutral-700 border bg-g-gray-lite flex-1 h-dvh">
+                <Navigate />
               </div>
 
-              <aside
-                className={`${!open && 'hidden'} md:hidden absolute inset-0 top-[calc(5rem+1rem)] z-30 flex flex-col gap-4 h-[calc(100dvh-7rem)]`}
-              >
-                <div className="p-4 rounded-lg border-neutral-700 border bg-g-gray-lite flex-1 h-dvh">
-                  <Navigate />
-                </div>
-
-                <div className="flex flex-col rounded-lg border-neutral-700 border g-gray p-4 gap-6">
-                  <Download />
-                </div>
-              </aside>
-            </>
-          }
+              <div className="flex flex-col rounded-lg border-neutral-700 border g-gray p-4 gap-6">
+                <Download />
+              </div>
+            </aside>
+          </>
+            }
         </header>
         <div className="flex gap-4 min-h-[calc(100dvh-5rem-0.5rem*2-1rem)]">
           {isNavbar &&
-          <div className="w-72 flex-col gap-4 md:flex hidden h-[calc(100dvh-5rem-0.5rem*2-1rem)] sticky top-[calc(5rem+1.5rem)] z-30">
+          <div
+            className="w-72 flex-col gap-4 md:flex hidden h-[calc(100dvh-5rem-0.5rem*2-1rem)] sticky top-[calc(5rem+1.5rem)] z-30"
+          >
             <aside
               className="flex flex-col h-dvh rounded-lg border-neutral-700 border bg-g-gray-lite g-gray p-4"
             >
@@ -155,13 +160,13 @@ export const AppLayout: React.FC<React.PropsWithChildren<Props>> = ({
               <Download />
             </div>
           </div>
-          }
+            }
 
           <main className={'grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 relative'}>
             <div
               className="bg-[url('/atom_bg.png')] bg-no-repeat bg-[center_top_-1rem] absolute inset-0 top-[-6rem]"
             />
-            <div className={`${open && 'opacity-0'} h-full container md:mx-auto z-[1] md:pt-10 pt-0`}>
+            <div className={`${open && 'opacity-0'} h-full container md:mx-auto z-[1] md:pt-10 pt-0 overflow-hidden`}>
               {children}
             </div>
           </main>
