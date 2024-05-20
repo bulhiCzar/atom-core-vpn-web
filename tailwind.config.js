@@ -18,7 +18,8 @@ export default {
       'g-blue': 'linear-gradient(90deg, #6043E5 0%, #B16BF6 100%)',
       'g-gray': 'linear-gradient(90deg, #8E8E8E 0%, #FFF 51%, #8E8E8E 100%)',
       'g-gray-lite': 'linear-gradient(161deg, #282828 0%, #000 100%)',
-      'purple': '#8A74F3'
+      'purple': '#8A74F3',
+      // 'ping'
     },
     container: {
       center: true,

@@ -5,20 +5,22 @@ import React from 'react'
 interface Props {
   textCopy?: string
   position?: 'left' | 'right' | 'none'
+  className?: string
 }
 
 export const CopyTo: React.FC<React.PropsWithChildren<Props>> = ({
   children,
   textCopy,
   position = 'left',
+  className = '',
 }) => {
   return (
     <span
       onClick={() => textCopy && copyTextToClipboard(textCopy)}
-      className="flex"
+      className={`${className} flex`}
     >
       {position === 'left' &&
-        <div className="h-6 w-6 mr-4">
+        <div className="h-6 w-6 mr-4 cursor-pointer hover:bg-neutral-700/20 rounded flex justify-center items-center">
           <CopySvg />
         </div>
       }
@@ -26,7 +28,7 @@ export const CopyTo: React.FC<React.PropsWithChildren<Props>> = ({
       {children}
 
       {position === 'right' &&
-        <div className="h-6 w-6 ml-4 ">
+        <div className="h-6 w-6 ml-4 cursor-pointer hover:bg-neutral-700/20 rounded flex justify-center items-center">
           <CopySvg />
         </div>
       }

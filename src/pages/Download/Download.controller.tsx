@@ -17,6 +17,21 @@ const list = [
     icon: '/os_icons/android.png',
     links: 'https://goole.com',
   },
+  {
+    name: 'Android',
+    icon: '/os_icons/android.png',
+    links: 'https://goole.com',
+  },
+  {
+    name: 'Android',
+    icon: '/os_icons/android.png',
+    links: 'https://goole.com',
+  },
+  {
+    name: 'Android',
+    icon: '/os_icons/android.png',
+    links: 'https://goole.com',
+  },
 ] as const
 
 export const DownloadController = () => {
@@ -24,12 +39,12 @@ export const DownloadController = () => {
     <Page
       title="Download Atom Core VPN"
       description="To start downloading the application, select the required operating system and click the download button"
-      className="flex flex-wrap gap-6 md1:justify-around justify-center"
+      className="flex flex-wrap gap-6 justify-center"
     >
       {list.map(({ name, icon, links }) =>
         <Card
           key={name}
-          className="flex flex-col gap-8 items-center md:min-w-56 w-full max-w-xs md:flex-[0_0_calc(33.33%-1.5rem)]"
+          className="flex flex-col gap-8 items-center md:max-w-[calc(33%-1.5rem)] w-full max-w-xs"
         >
           <img
             src={icon}

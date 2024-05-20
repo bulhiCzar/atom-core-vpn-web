@@ -6,6 +6,8 @@ import { useWallet } from '@thirdweb-dev/react'
 import { DashboardController } from './Dashboard'
 import { ReferralController } from './Referral'
 import { DownloadController } from './Download'
+import { WelcomeController } from './Welcome'
+import { PlanController } from './Plan'
 
 const routerBase = [
   {
@@ -23,6 +25,14 @@ const routerApp = [
   {
     path: 'referral',
     element: <AppLayout><ReferralController /></AppLayout>,
+  },
+  {
+    path: 'welcome',
+    element: <AppLayout enabledNavbar={false}><WelcomeController /></AppLayout>,
+  },
+  {
+    path: 'plan',
+    element: <AppLayout><PlanController /></AppLayout>,
   },
 ]
 

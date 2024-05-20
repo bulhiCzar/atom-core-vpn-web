@@ -1,5 +1,7 @@
 import { Button, List, Page, CopyTo } from '@uikit'
 import dayjs from 'dayjs'
+import { Link } from 'react-router-dom'
+import { ModalConfirm } from '../../@uikit/ModalConfirm'
 
 const className = 'flex gap-10 md:items-center w-full md:w-auto justify-between'
 
@@ -21,7 +23,9 @@ export const DashboardController = () => {
               title: 'Plan',
               value: <div className={className}>
                 <div>1 month</div>
-                <Button color="primary">Upgrade</Button>
+                <Link to="/plan">
+                  <Button color="primary">Upgrade</Button>
+                </Link>
               </div>,
             },
             {
@@ -72,6 +76,13 @@ export const DashboardController = () => {
           ]}
         />
       </Page>
+
+      {false && <ModalConfirm
+        title="Warning!"
+        description="You can generate new authorization code in your account at any time, but note that all active sessions will be terminated"
+        confirmButtonText="Generate new"
+      />
+      }
     </>
   )
 }

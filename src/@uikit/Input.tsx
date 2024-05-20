@@ -7,7 +7,8 @@ export const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = ({
   return (
     <input
       {...props}
-      className={`${className} bg-transparent border-neutral-700 border-2 rounded-xl py-4 text-base font-normal px-8`}
+      className={`${className} bg-transparent border-neutral-700 !outline-none
+       border-2 rounded-xl py-4 text-base font-normal px-8 placeholder-neutral-700`}
     />
   )
 }

@@ -5,9 +5,18 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { useWallet } from '@thirdweb-dev/react'
 import { Button, Text } from '@uikit'
 
-export const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
+interface Props {
+  enabledNavbar?: boolean
+}
+
+export const AppLayout: React.FC<React.PropsWithChildren<Props>> = ({
+  children,
+  enabledNavbar,
+}) => {
   const wallet = useWallet()
   const { pathname } = useLocation()
+
+  const isNavbar = enabledNavbar ?? !!wallet
 
   const [open, setOpen] = React.useState<boolean>(false)
 
@@ -74,7 +83,7 @@ export const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
 
           <ConnectButton />
 
-          {wallet &&
+          {isNavbar &&
             <>
               <div
                 className="md:hidden cursor-pointer"
@@ -114,7 +123,7 @@ export const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
               </div>
 
               <aside
-                className={`${!open && 'hidden'} md:hidden absolute inset-0 top-[calc(5rem+1rem)] z-50 flex flex-col gap-4 h-[calc(100dvh-7rem)]`}
+                className={`${!open && 'hidden'} md:hidden absolute inset-0 top-[calc(5rem+1rem)] z-30 flex flex-col gap-4 h-[calc(100dvh-7rem)]`}
               >
                 <div className="p-4 rounded-lg border-neutral-700 border bg-g-gray-lite flex-1 h-dvh">
                   <Navigate />
@@ -128,8 +137,8 @@ export const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
           }
         </header>
         <div className="flex gap-4 min-h-[calc(100dvh-5rem-0.5rem*2-1rem)]">
-          {wallet &&
-          <div className="w-72 flex-col gap-4 md:flex hidden h-[calc(100dvh-5rem-0.5rem*2-1rem)] sticky top-[calc(5rem+1.5rem)]">
+          {isNavbar &&
+          <div className="w-72 flex-col gap-4 md:flex hidden h-[calc(100dvh-5rem-0.5rem*2-1rem)] sticky top-[calc(5rem+1.5rem)] z-30">
             <aside
               className="flex flex-col h-dvh rounded-lg border-neutral-700 border bg-g-gray-lite g-gray p-4"
             >
