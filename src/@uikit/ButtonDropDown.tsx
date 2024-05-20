@@ -30,14 +30,14 @@ export const ButtonDropDown: React.FC<Props> = ({
 
       <div
         className={`${!isOpen && 'hidden'} inset-x-0 absolute
-        g-blue rounded-b-xl flex flex-col ease-in duration-300 transition-all
-        [&>*]:p-4 *:before:absolute [&>*:hover:before]:bg-white/15 *:before:inset-0 *:relative
+        rounded-b-xl flex flex-col ease-in duration-300 transition-all !overflow-hidden
+        [&>div>*]:p-4
         `}
       >
         {data?.map(({ name, label }) =>
-          <React.Fragment key={name}>
+          <div className="g-blue" key={name}>
             {label}
-          </React.Fragment>,
+          </div>,
         )}
       </div>
     </div>

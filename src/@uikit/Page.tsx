@@ -34,7 +34,7 @@ export const Page: React.FC<React.PropsWithChildren<Props>> = ({
 
           {title}
         </span>
-        <span className="text-base font-normal opacity-50 md:mb-24 mb-12">
+        <span className="text-base font-normal opacity-50 md:mb-12 mb-6">
           {description}
         </span>
       </div>

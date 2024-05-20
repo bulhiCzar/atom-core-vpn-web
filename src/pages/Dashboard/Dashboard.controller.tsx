@@ -56,7 +56,7 @@ export const DashboardController = () => {
         className="mb-32"
       >
         <List
-          className="-mt-16"
+          className="md:-mt-4"
           titleVariant="small"
           data={[
             {
