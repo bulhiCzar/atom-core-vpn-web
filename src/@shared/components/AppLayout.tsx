@@ -114,9 +114,9 @@ export const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
               </div>
 
               <aside
-                className={`${!open && 'hidden'} md:hidden absolute inset-0 top-[calc(5rem+1rem)] z-50 flex flex-col gap-4 h-[calc(100vh-7rem)]`}
+                className={`${!open && 'hidden'} md:hidden absolute inset-0 top-[calc(5rem+1rem)] z-50 flex flex-col gap-4 h-[calc(100dvh-7rem)]`}
               >
-                <div className="p-4 rounded-lg border-neutral-700 border bg-g-gray-lite flex-1 h-full">
+                <div className="p-4 rounded-lg border-neutral-700 border bg-g-gray-lite flex-1 h-dvh">
                   <Navigate />
                 </div>
 
@@ -127,11 +127,11 @@ export const AppLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
             </>
           }
         </header>
-        <div className="flex gap-4 min-h-[calc(100vh-5rem-0.5rem*2-1rem)]">
+        <div className="flex gap-4 min-h-[calc(100dvh-5rem-0.5rem*2-1rem)]">
           {wallet &&
-          <div className="w-72 flex-col gap-4 md:flex hidden h-[calc(100vh-5rem-0.5rem*2-1rem)] sticky top-[calc(5rem+1.5rem)]">
+          <div className="w-72 flex-col gap-4 md:flex hidden h-[calc(100dvh-5rem-0.5rem*2-1rem)] sticky top-[calc(5rem+1.5rem)]">
             <aside
-              className="flex flex-col h-full rounded-lg border-neutral-700 border bg-g-gray-lite g-gray p-4"
+              className="flex flex-col h-dvh rounded-lg border-neutral-700 border bg-g-gray-lite g-gray p-4"
             >
               <Text
                 color="silver"

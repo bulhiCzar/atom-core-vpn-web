@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { Button } from '@uikit'
 import { copyTextToClipboard } from '@utils'
 import React from 'react'
 
@@ -13,30 +12,25 @@ export const CopyTo: React.FC<React.PropsWithChildren<Props>> = ({
   textCopy,
   position = 'left',
 }) => {
-  const Comp = 'span'
-
   return (
-    <Comp
+    <span
       onClick={() => textCopy && copyTextToClipboard(textCopy)}
+      className="flex"
     >
-      {position === 'left' && <Button
-        variant="text"
-        className="h-6 w-6 mr-4"
-      >
-        <CopySvg />
-      </Button>
+      {position === 'left' &&
+        <div className="h-6 w-6 mr-4">
+          <CopySvg />
+        </div>
       }
 
       {children}
 
-      {position === 'right' && <Button
-        variant="text"
-        className="h-6 w-6 ml-4 "
-      >
-        <CopySvg />
-      </Button>
+      {position === 'right' &&
+        <div className="h-6 w-6 ml-4 ">
+          <CopySvg />
+        </div>
       }
-    </Comp>
+    </span>
   )
 }
 

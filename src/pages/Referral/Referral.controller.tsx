@@ -21,6 +21,22 @@ export const ReferralController = () => {
 
       <div className="flex flex-col">
         <Text className="text-2xl font-semibold mb-8">
+          Enter referral code anf get 5% discount
+        </Text>
+
+        <div className="flex justify-between gap-2">
+          <Input
+            placeholder="Your referrer code"
+            className="w-auto"
+          />
+          <Button color="primary">
+            Active
+          </Button>
+        </div>
+      </div>
+
+      <div className="flex flex-col">
+        <Text className="text-2xl font-semibold mb-8">
           Create your own referral code
         </Text>
 

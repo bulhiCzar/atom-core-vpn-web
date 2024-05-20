@@ -7,7 +7,7 @@ export const ConnectButton: React.FC<ConnectWalletProps> = (props) => {
 
   return (
     <ConnectWallet
-      className={!wallet ? '!rounded-lg g-blue !text-white !text-sm' : ''}
+      className={!wallet ? '!rounded-lg g-blue !text-white !text-sm hover:opacity-85' : ''}
       {...props}
     />
   )
