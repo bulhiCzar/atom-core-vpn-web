@@ -2,10 +2,13 @@ import { Button, List, Page, CopyTo } from '@uikit'
 import dayjs from 'dayjs'
 import { Link } from 'react-router-dom'
 import { ModalConfirm } from '../../@uikit/ModalConfirm'
+import React from 'react'
 
 const className = 'flex gap-10 md:items-center w-full md:w-auto justify-between'
 
 export const DashboardController = () => {
+  const [open, setOpen] = React.useState(false)
+
   return (
     <>
       <Page
@@ -32,7 +35,7 @@ export const DashboardController = () => {
               title: 'Expires',
               value: <div className={className}>
                 <div>{dayjs().format('D MMM YYYY')}</div>
-                <Button color="primary" variant="bordered">Renew</Button>
+                <Button color="primary" variant="bordered" onClick={() => setOpen(true)}>Renew</Button>
               </div>,
             },
             {
@@ -77,10 +80,11 @@ export const DashboardController = () => {
         />
       </Page>
 
-      {false && <ModalConfirm
+      {open && <ModalConfirm
         title="Warning!"
         description="You can generate new authorization code in your account at any time, but note that all active sessions will be terminated"
         confirmButtonText="Generate new"
+        onCancel={() => setOpen(false)}
       />
       }
     </>
