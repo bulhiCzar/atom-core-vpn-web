@@ -40,7 +40,7 @@ export const PlanController = () => {
     <Page
       title="Billing plans"
       back
-      className="flex flex-wrap gap-6 justify-center xl:-mx-28"
+      className="flex flex-wrap gap-6 justify-center lg:-mx-28"
     >
       {plans.map(({ price: { withDiscount, withoutDiscount, discount }, title }) => (
         <Card

@@ -18,18 +18,18 @@ const list = [
     links: 'https://goole.com',
   },
   {
-    name: 'Android',
-    icon: '/os_icons/android.png',
+    name: 'iOs',
+    icon: '/os_icons/ios.png',
     links: 'https://goole.com',
   },
   {
-    name: 'Android',
-    icon: '/os_icons/android.png',
+    name: 'Mac',
+    icon: '/os_icons/mac.png',
     links: 'https://goole.com',
   },
   {
-    name: 'Android',
-    icon: '/os_icons/android.png',
+    name: 'Linux',
+    icon: '/os_icons/linux.png',
     links: 'https://goole.com',
   },
 ] as const
@@ -39,16 +39,14 @@ export const DownloadController = () => {
     <Page
       title="Download Atom Core VPN"
       description="To start downloading the application, select the required operating system and click the download button"
-      className="flex flex-wrap gap-6 justify-center"
+      className="flex flex-wrap gap-6 justify-center lg:-mx-28"
     >
       {list.map(({ name, icon, links }) =>
         <Card
           key={name}
-          className="flex flex-col gap-8 items-center md:max-w-[calc(33%-1.5rem)] w-full max-w-xs"
+          className="flex flex-col gap-8 items-center xl:max-w-[calc(33%-1.5rem)] w-full max-w-xs"
         >
-          <img
-            src={icon}
-          />
+          <img src={icon} />
           <span>{name}</span>
           {!Array.isArray(links)
             ? <a href={links as string} className="w-full" download>
